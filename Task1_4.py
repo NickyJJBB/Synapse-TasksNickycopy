@@ -1,4 +1,5 @@
 import random
+from prettytable import PrettyTable
 
 class ChessPlayer:
     def __init__(self,name,age,ELO,Tenacity,isBoring):
@@ -56,10 +57,12 @@ for i in range(6):
 max=a[0].score
 wname=""
 print("The final results are:")
+myTable = PrettyTable(["Player Name", "Score"])
 for l in range(6):
     if max<a[l].score:
         max=a[l].score
         wname=a[l].name
-    print(a[l].name," - ",a[l].score)
+    myTable.add_row([a[l].name,a[l].score])
 
+print(myTable)
 print("The winner of the tournament is",wname,"with a score of",max)
