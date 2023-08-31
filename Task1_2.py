@@ -10,7 +10,7 @@ a=[]
 for r in range(1,len(new_lst)):
     for c in combinations(new_lst,r):
         a.append(c)
-print(a)
+
 diff=[]
 for items in a:
     res=[i for i in new_lst if i not in items]
@@ -18,5 +18,5 @@ for items in a:
     diff.append(c)
     if c==0:
         break
-print(diff)
+
 print(f"Minimum difference: {sorted(diff)[0]}")
